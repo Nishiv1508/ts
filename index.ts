@@ -63,4 +63,17 @@ function handleError(errmsg: string): never {
   //in this type of scenarios never is preferrred over void
   throw new Error(errmsg);
 }
+
+//objects
+const User = {
+  name: "Nishiv",
+  email: "abc@gmail.com",
+  isActive: true,
+};
+function createUser({ name, isPaid }: { name: string; isPaid: boolean }) {}
+createUser({ name: "Nishiv", isPaid: false });
+
+function createCourse(): { name: string; price: number } {
+  return { name: "TS", price: 500 };
+}
 export {};
