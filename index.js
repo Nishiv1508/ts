@@ -50,4 +50,26 @@ function handleError(errmsg) {
     //in this type of scenarios never is preferrred over void
     throw new Error(errmsg);
 }
+//objects
+const User = {
+    name: "Nishiv",
+    email: "abc@gmail.com",
+    isActive: true,
+};
+function createUser({ name, isPaid }) { }
+createUser({ name: "Nishiv", isPaid: false });
+function createCourse() {
+    return { name: "TS", price: 500 };
+}
+function myFunc(user) {
+    return { name: "", email: "", isActive: true };
+}
+myFunc({ name: "", email: "", isActive: true });
+let myUser = {
+    _id: "1234",
+    name: "Meow",
+    email: "meow@gmail.com",
+    isActive: false,
+};
+myUser.email = "m@gmail.com";
 export {};

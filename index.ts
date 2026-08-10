@@ -76,4 +76,47 @@ createUser({ name: "Nishiv", isPaid: false });
 function createCourse(): { name: string; price: number } {
   return { name: "TS", price: 500 };
 }
+
+//type alias
+type User1 = {
+  name: string;
+  email: string;
+  isActive: boolean;
+};
+
+function myFunc(user: User1): User1 {
+  return { name: "", email: "", isActive: true };
+}
+myFunc({ name: "", email: "", isActive: true });
+
+type User2 = {
+  readonly _id: string; // readonly keyword means its uneditable
+  name: string;
+  email: string;
+  isActive: boolean;
+  creditCardDetails?: number; //? means entering this value is optional
+};
+let myUser: User2 = {
+  _id: "1234",
+  name: "Meow",
+  email: "meow@gmail.com",
+  isActive: false,
+};
+myUser.email = "m@gmail.com";
+// myUser._id = "616895"; this is not allowed as _id is readonly
+
+type cardNumber = {
+  cardNumber: string;
+};
+
+type cardDate = {
+  cardDate: string;
+};
+
+//Not a good practice
+type cardDetails = cardNumber &
+  cardDate & {
+    cvv: number;
+  };
+
 export {};
