@@ -168,4 +168,14 @@ const data1: (number | string)[] = ["fweh", 23, "wd"]; //anything number or stri
 let seatAllotment: "asile" | "middle" | "window" = "middle";
 // seatAllotment = "crew"   -> not possible
 
+//tuples
+let user4: [string, number, boolean] = ["hc", 131, true]; //in a specific mentioned order. Order of the array matters
+
+let rgb: [number, number, number] = [255, 0, 255];
+
+type User5 = [number, string];
+let newUser: User5 = [112, "abc@gmail.com"];
+newUser[1] = "test@gmail.com";
+// newUser.push(true);  not allowed because of tuple
+
 export {};
