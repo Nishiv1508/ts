@@ -178,4 +178,12 @@ let newUser: User5 = [112, "abc@gmail.com"];
 newUser[1] = "test@gmail.com";
 // newUser.push(true);  not allowed because of tuple
 
+//Enums (Multiple values can be assigned to ENUM)
+const enum SeatChoice {
+  ASILE = "aisle",
+  MIDDLE = "middle",
+  WINDOW = "window",
+  FOURTH = 0,
+}
+const hcSeat = SeatChoice.WINDOW; //only options available in the enum can be put
 export {};
