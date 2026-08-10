@@ -119,4 +119,53 @@ type cardDetails = cardNumber &
     cvv: number;
   };
 
+//arrays
+const superHeroes: string[] = [];
+const heroPower: Array<number> = [];
+
+type user2 = {
+  name: string;
+  isActive: boolean;
+};
+const allUSers: user2[] = [];
+
+const mlModels: number[][] = [[255, 255, 255], []];
+
+superHeroes.push("spidey");
+heroPower.push(2);
+allUSers.push({ name: "", isActive: true });
+
+//Union
+let score: number | string = 33; //anyone datatype
+score = 44;
+score = "55";
+
+type User3 = {
+  name: string;
+  id: number;
+};
+type Admin = {
+  username: string;
+  id: number;
+};
+let nish: User3 | Admin = { name: "Nishiv", id: 764 };
+nish = { username: "Nishiv", id: 123 };
+
+function getDbId(id: number | string) {
+  // id.toLowerCase() -> This will throw error as id can be both string or number so have to check it first
+  if (typeof id === "string") {
+    return id.toLowerCase(); //Now this will work
+  } else {
+    return id + 2; // 100% value is number only
+  }
+}
+getDbId(3);
+getDbId("bkhwd");
+
+const data: number[] | string[] = [1, 2, 3]; // either all number array or all strings array
+const data1: (number | string)[] = ["fweh", 23, "wd"]; //anything number or string
+
+let seatAllotment: "asile" | "middle" | "window" = "middle";
+// seatAllotment = "crew"   -> not possible
+
 export {};
