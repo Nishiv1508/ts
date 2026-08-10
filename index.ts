@@ -186,4 +186,25 @@ const enum SeatChoice {
   FOURTH = 0,
 }
 const hcSeat = SeatChoice.WINDOW; //only options available in the enum can be put
+
+//interface (All properties must get used)
+interface User6 {
+  readonly dbId: number;
+  email: string;
+  userId: number;
+  startTrail: () => string;
+  // alternative way -> startTrail(): string
+  getCoupon(couponName: string, value: number): number;
+}
+const n: User6 = {
+  dbId: 214,
+  email: "b",
+  userId: 469132,
+  startTrail: () => {
+    return "trail started";
+  },
+  getCoupon: (name: "Nishiv15", value: 20) => {
+    return 10;
+  },
+};
 export {};
