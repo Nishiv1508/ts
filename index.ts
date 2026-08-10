@@ -192,14 +192,26 @@ interface User6 {
   readonly dbId: number;
   email: string;
   userId: number;
+  googleId?: string;
   startTrail: () => string;
   // alternative way -> startTrail(): string
   getCoupon(couponName: string, value: number): number;
 }
+
+interface User6 {
+  //Interface reopening. assigning other member to same interface
+  githubToken: string;
+}
+
+interface Admin1 extends User6 {
+  role: "admin" | "ta" | "learner";
+}
+
 const n: User6 = {
   dbId: 214,
   email: "b",
   userId: 469132,
+  githubToken: "hdw",
   startTrail: () => {
     return "trail started";
   },
