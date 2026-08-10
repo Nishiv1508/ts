@@ -21,5 +21,46 @@ function getHero() {
 hero = getHero();
 
 // functions declaration in TS
+function addTwo(num: number): number {
+  // in case of function params always keep the datatype assigned (Compulsory)
+  return num + 2;
+}
+let myVal = addTwo(5);
 
+function getUpper(val: string): string {
+  return val.toUpperCase();
+}
+getUpper("Meow");
+
+function signUpUser(name: string, email: string, isPaid: boolean) {}
+signUpUser("Meow", "test@gmail.com", true);
+
+let loginUser = (name: string, email: string, isPaid: boolean = false) => {};
+loginUser("N", "n@n.com");
+
+// function getValue(myVal: number): boolean {
+//   if (myVal > 5) {
+//     return true;
+//   }
+//   return "200 OK";
+// }
+
+const greetHello = (s: string): string => {
+  return `Hello ${s}`;
+};
+
+const heroes = ["thor", "Spiderman", "ironman"];
+heroes.map((hero): string => {
+  return `Hero is ${hero}`;
+});
+
+function consoleError(errmsg: string): void {
+  //No return type means void
+  console.log(errmsg);
+}
+
+function handleError(errmsg: string): never {
+  //in this type of scenarios never is preferrred over void
+  throw new Error(errmsg);
+}
 export {};
