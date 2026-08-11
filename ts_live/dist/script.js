@@ -63,6 +63,31 @@ class SubUser extends User {
         this._age = this._age + 1;
     }
 }
+class TakePhotoAbstract {
+    cameraMode;
+    filter;
+    constructor(cameraMode, filter) {
+        this.cameraMode = cameraMode;
+        this.filter = filter;
+    }
+    getReelTime() {
+        return 1;
+    }
+}
+class Facebook extends TakePhotoAbstract {
+    cameraMode;
+    filter;
+    burst;
+    constructor(cameraMode, filter, burst) {
+        super(cameraMode, filter);
+        this.cameraMode = cameraMode;
+        this.filter = filter;
+        this.burst = burst;
+    }
+    getSepia() {
+        console.log("Sepia");
+    }
+}
 const nish = new User("n@n.com", "Nishiv");
 let data = nish.getData;
 nish.setCount = 2;

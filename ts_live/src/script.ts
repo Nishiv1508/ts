@@ -70,10 +70,39 @@ class SubUser extends User {
   }
 }
 
+abstract class TakePhotoAbstract {
+  constructor(
+    public cameraMode: string,
+    public filter: string,
+  ) {}
+
+  abstract getSepia(): void; //only those methods declare with abstract keyword are compulsory to use in the inherited class
+
+  getReelTime(): number {
+    return 1;
+  }
+}
+
+class Facebook extends TakePhotoAbstract {
+  constructor(
+    public cameraMode: string,
+    public filter: string,
+    public burst: number,
+  ) {
+    super(cameraMode, filter);
+  }
+
+  getSepia(): void {
+    console.log("Sepia");
+  }
+}
+
 const nish = new User("n@n.com", "Nishiv");
 let data = nish.getData;
 nish.setCount = 2;
 console.log(nish.getCount);
 console.log(data);
+
+// const obj1 = new TakePhoto("back", "no-filter");  -> objects of abstract class cannot be created
 
 export {};
